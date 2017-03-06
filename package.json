@@ -1,0 +1,19 @@
+{
+  "name": "budget-hamster-rest",
+  "version": "0.1.0",
+  "description": "REST for budget hamster.",
+  "main": "src/index.js",
+  "repository": "https://github.com/codenetwork/budget-hamster-rest.git",
+  "author": "Byron Mejia <byron.mejia@connect.qut.edu.au>",
+  "license": "GNU",
+  "dependencies": {
+    "babel-preset-env": "^1.2.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "nodemon": "^1.11.0"
+  }
+}
