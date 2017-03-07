@@ -8,12 +8,22 @@
   "license": "GNU",
   "dependencies": {
     "babel-preset-env": "^1.2.0",
+    "body-parser": "^1.17.1",
     "dotenv": "^4.0.0",
-    "express": "^4.15.0"
+    "express": "^4.15.0",
+    "method-override": "^2.3.7",
+    "morgan": "^1.8.1"
   },
   "devDependencies": {
+    "apidoc": "^0.17.5",
     "babel-cli": "^6.23.0",
     "babel-plugin-syntax-flow": "^6.18.0",
     "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": ">=7.5.0"
+  },
+  "scripts": {
+    "dev": "babel-node src/index.js"
   }
 }
