@@ -1,5 +1,5 @@
-import * as invites from './invites';
+import invites from './invites';
 
-export {
+export default {
   invites,
-}
+};

@@ -11,5 +11,4 @@ function mainRouter() {
   return router;
 }
 
-export { mainRouter as router };
 export default mainRouter;

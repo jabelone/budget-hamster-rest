@@ -17,5 +17,9 @@ export function inviteSlackExpressAdapter(req, res) {
         });
       },
     },
-  }
+  };
 }
+
+export default {
+  inviteSlackExpressAdapter,
+};
