@@ -8,7 +8,7 @@ router.post('/slack',
   (req, res) => {
     const { input, response } = adapter.inviteSlackExpressAdapter(req, res);
     interactor.inviteSlackEmail(input, response);
-  }
+  },
 );
 
 export default router;

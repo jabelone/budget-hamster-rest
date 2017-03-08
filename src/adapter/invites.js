@@ -1,10 +1,10 @@
-export function inviteSlackExpressAdapter(req, res) {
+function inviteSlackExpressAdapter(req, res) {
   return {
     input: {
       email: req.body.email,
     },
     response: {
-      onSuccess: ({ email: email }) => {
+      onSuccess: ({ email }) => {
         res.json({
           ok: true,
           msg: 'Email has been invited',
@@ -14,7 +14,7 @@ export function inviteSlackExpressAdapter(req, res) {
       onFail: (status, { msg }) => {
         res.status(status).json({
           ok: false,
-          msg: msg,
+          msg,
         });
       },
     },

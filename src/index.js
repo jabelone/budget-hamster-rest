@@ -1,7 +1,8 @@
-import express from 'express';
-import morgan from 'morgan';
 import bodyParser from 'body-parser';
+import cors from 'cors';
+import express from 'express';
 import methodOverride from 'method-override';
+import morgan from 'morgan';
 import dotenv from 'dotenv';
 import router from './router';
 
@@ -10,6 +11,8 @@ dotenv.config();
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const app = express();
 const port = process.env.PORT || '3000';
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
