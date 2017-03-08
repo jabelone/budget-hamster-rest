@@ -1,12 +1,13 @@
 import { Router } from 'express';
-import { invites } from '../adapter'
+import adapter from '../adapter/invites';
+import interactor from '../interactor/invites';
 
 const router = new Router();
 
 router.post('/slack',
   (req, res) => {
-    const { input, response } = invites.inviteSlackExpressAdapter(req, res);
-    throw new Error('Not yet implemented');
+    const { input, response } = adapter.inviteSlackExpressAdapter(req, res);
+    interactor.inviteSlackEmail(input, response);
   }
 );
 

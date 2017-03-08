@@ -30,7 +30,7 @@
     "node": ">=7.7.1"
   },
   "scripts": {
-    "start:dev": "nodemon src/index.js --exec babel-node",
+    "start:dev": "nodemon src/index.js --exec babel-node --require",
     "lint": "eslint src/**"
   }
 }

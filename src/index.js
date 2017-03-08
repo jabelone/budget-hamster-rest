@@ -1,11 +1,11 @@
-import dotenv from 'dotenv';
+require('dotenv').config();
+
 import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import methodOverride from 'method-override';
 import router from './router';
 
-dotenv.config();
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const app = express();
 const port = process.env.PORT || '3000';
