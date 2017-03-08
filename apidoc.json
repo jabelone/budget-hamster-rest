@@ -1,0 +1,7 @@
+{
+  "name": "Budget Hamster REST Api (AKA Code Network API)",
+  "version": "0.1.0",
+  "description": "This API holds a heap of functions for developers within Code Network to use",
+  "title": "Budget Hamster Api",
+  "url" : "https://api.codenetwork.co/v1"
+}
