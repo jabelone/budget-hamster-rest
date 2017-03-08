@@ -1,5 +1,8 @@
 import superAgent from 'superagent';
+import dotenv from 'dotenv';
 import translateError from './translate-error';
+
+dotenv.config();
 
 const SLACK_URL = process.env.SLACK_URL || '';
 const SLACK_TOKEN = process.env.SLACK_TOKEN || '';
@@ -10,14 +13,14 @@ export async function inviteEmailToSlack(email) {
     .accept('json')
     .type('form')
     .send({
-      email: email,
+      email,
       token: SLACK_TOKEN,
       set_active: true,
     })
     .catch(translateError('superAgent Error'));
 
-  if(!invitation.body.ok) {
-    switch(invitation.body.error) {
+  if (!invitation.body.ok) {
+    switch (invitation.body.error) {
       case 'already_in_team':
         throw new Error('Already in team');
       case 'invalid_email':
@@ -32,4 +35,4 @@ export async function inviteEmailToSlack(email) {
 
 export default {
   inviteEmailToSlack,
-}
+};
