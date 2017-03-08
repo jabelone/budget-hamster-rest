@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import adapter from '../adapter/ca';
-import interactor from '../interactor/invites';
+import adapter from '../adapter/campaigns';
+import interactor from '../interactor/campaigns';
 
 const router = new Router();
 
