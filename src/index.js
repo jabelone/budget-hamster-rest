@@ -25,4 +25,14 @@ app.use(methodOverride(function (req, res) {
 app.use(router());
 app.use(morgan('combined'));
 
+function listen(expressApp = app, expressPort = port) {
+  expressApp.listen(expressPort, () => {
+    console.log(`Started server on port ${expressPort}!`);
+  });
+}
+
+if (require.main === module) {
+  listen();
+}
+
 export default app;

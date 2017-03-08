@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import members from './member';
-import invites from './invite';
+import members from './members';
+import invites from './invites';
 import transactions from './transactions';
 
 function mainRouter() {
