@@ -8,4 +8,10 @@ router.post('/campaigns/:id',
   },
 );
 
+router.post('/donations',
+  (req, res) => {
+    throw new Error('Not implemented yet');
+  },
+);
+
 export default router;
