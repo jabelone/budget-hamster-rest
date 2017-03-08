@@ -4,7 +4,7 @@ async function inviteSlackEmail(
   input,
   response,
   method = {
-    slack: inviteEmailToSlack,
+    inviteEmailToSlack,
   },
 ) {
   try {
