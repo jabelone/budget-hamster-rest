@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import members from './members';
 import invites from './invites';
-import transactions from './transactions';
+import campaigns from './campaigns';
 
 function mainRouter() {
   const router = new Router();
   router.use('/members', members);
   router.use('/invites', invites);
-  router.use('/transactions', transactions);
+  router.use('/campaigns', campaigns);
   return router;
 }
 
