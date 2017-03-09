@@ -1,6 +1,7 @@
 const TABLE_NAME = 'order_details';
-const orderTable = require('./20170308203005_create_orders').TABLE_NAME;
+const orderTable = require('./20170309202310_create_orders').TABLE_NAME;
 const campaignTable = require('./20170308202600_create_campaign').TABLE_NAME;
+const shopItemTable = require('./20170309202304_create_shop_item').TABLE_NAME;
 
 exports.TABLE_NAME = TABLE_NAME;
 
@@ -10,10 +11,9 @@ exports.up = function(knex, Promise) {
       table.integer('id').primary();
       table.integer('order_id').references('id').inTable(orderTable).notNullable();
       table.integer('campaign_id').references('id').inTable(campaignTable);
-      table.string('title').notNullable();
-      table.string('description').notNullable();
+      table.integer('shop_item_id').references('id').inTable(shopItemTable);
       table.integer('quantity').notNullable();
-      table.integer('unit_price').notNullable();
+      table.json('meta').nullable();
     }),
   ]);
 };
