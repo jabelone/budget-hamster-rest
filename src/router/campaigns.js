@@ -5,7 +5,7 @@ import interactor from '../interactor/campaigns';
 const router = new Router();
 
 /**
- * @api {get} /campaigns View all Campaigns
+ * @api {get} /campaigns Read all Campaigns
  * @apiName CampaignsGetAll
  * @apiGroup Campaigns
  *
