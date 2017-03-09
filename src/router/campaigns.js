@@ -8,7 +8,7 @@ const router = new Router();
 router.get('/',
   (req, res) => {
     const { input, response } = adapter.getAllCampaignsExpress(res);
-    throw new Error('Not yet implemented');
+    interactor.getAllCampaigns(input, response);
   },
 );
 
@@ -16,7 +16,7 @@ router.get('/',
 router.post('/',
   (req, res) => {
     const { input, response } = adapter.createOneCampaignExpress(req, res);
-    throw new Error('Not yet implemented');
+    interactor.createOneCampaign(input, response);
   },
 );
 
@@ -24,7 +24,7 @@ router.post('/',
 router.get('/:id',
   (req, res) => {
     const { input, response } = adapter.readOneCampaignExpress(req, res);
-    throw new Error('Not yet implemented');
+    interactor.readOneCampaign(input, response);
   },
 );
 
@@ -32,7 +32,7 @@ router.get('/:id',
 router.put('/:id',
   (req, res) => {
     const { input, response } = adapter.updateOneCampaignExpress(req, res);
-    throw new Error('Not yet implemented');
+    interactor.updateOneCampaign(input, response);
   },
 );
 
@@ -40,7 +40,7 @@ router.put('/:id',
 router.delete('/:id',
   (req, res) => {
     const { input, response } = adapter.deleteOneCampaignExpress(req, res);
-    throw new Error('Not yet implemented');
+    interactor.deleteOneCampaign(input, response);
   },
 );
 

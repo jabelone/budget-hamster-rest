@@ -7,7 +7,12 @@ async function getAllCampaigns(
     Campaign,
   },
 ) {
-  // Do Something
+  try {
+    const campaigns = await data.Campaign.fetchAll();
+    response.onSuccess(campaigns);
+  } catch (e) {
+    response.onFail(500, { msg: e.message });
+  }
 }
 
 async function readOneCampaign(
@@ -17,7 +22,12 @@ async function readOneCampaign(
     Campaign,
   },
 ) {
-  // Do Something
+  try {
+    const campaign = await data.Campaign.findWhere({ id: input.id });
+    response.onSuccess(campaign);
+  } catch (e) {
+    response.onFail(500, { msg: e.message });
+  }
 }
 
 async function createOneCampaign(
@@ -27,7 +37,16 @@ async function createOneCampaign(
     Campaign,
   },
 ) {
-  // Do Something
+  try {
+    const campaign = await new data.Campaign({
+      start: input.start,
+      end: input.end,
+      goal: input.goal,
+    }).save(null, { method: 'insert' });
+    response.onSuccess(campaign);
+  } catch (e) {
+    response.onFail(500, { msg: e.message });
+  }
 }
 
 async function updateOneCampaign(
@@ -37,7 +56,17 @@ async function updateOneCampaign(
     Campaign,
   },
 ) {
-  // Do Something
+  try {
+    const campaign = await new data.Campaign({
+      id: input.id,
+      start: input.start,
+      end: input.end,
+      goal: input.goal,
+    }).save(null, { method: 'update' });
+    response.onSuccess(campaign);
+  } catch (e) {
+    response.onFail(500, { msg: e.message });
+  }
 }
 
 async function deleteOneCampaign(
@@ -47,7 +76,14 @@ async function deleteOneCampaign(
     Campaign,
   },
 ) {
-  // Do Something
+  try {
+    const campaign = await new data.Campaign({
+      id: input.id,
+    }).destroy();
+    response.onSuccess(campaign);
+  } catch (e) {
+    response.onFail(500, { msg: e.message });
+  }
 }
 
 export default {

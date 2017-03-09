@@ -37,9 +37,9 @@ function readOneCampaignExpress(req, res) {
 function createOneCampaignExpress(req, res) {
   return {
     input: {
-      start: req.param.start,
-      end: req.param.end,
-      goal: req.param.goal,
+      start: req.body.start,
+      end: req.body.end,
+      goal: req.body.goal,
     },
     response: {
       onSuccess: (campaign) => {
@@ -59,9 +59,9 @@ function updateOneCampaignExpress(req, res) {
   return {
     input: {
       id: req.param.id,
-      start: req.param.start,
-      end: req.param.end,
-      goal: req.param.goal,
+      start: req.body.start,
+      end: req.body.end,
+      goal: req.body.goal,
     },
     response: {
       onSuccess: (campaign) => {
@@ -81,9 +81,9 @@ function deleteOneCampaignExpress(req, res) {
   return {
     input: {
       id: req.param.id,
-      start: req.param.start,
-      end: req.param.end,
-      goal: req.param.goal,
+      start: req.body.start,
+      end: req.body.end,
+      goal: req.body.goal,
     },
     response: {
       onSuccess: (campaign) => {
