@@ -1,4 +1,4 @@
-function inviteSlackExpressAdapter(req, res) {
+function inviteSlackExpress(req, res) {
   return {
     input: {
       email: req.body.email,
@@ -22,5 +22,5 @@ function inviteSlackExpressAdapter(req, res) {
 }
 
 export default {
-  inviteSlackExpressAdapter,
+  inviteSlackExpress,
 };

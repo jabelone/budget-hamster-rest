@@ -25,7 +25,7 @@ const router = new Router();
  */
 router.post('/slack',
   (req, res) => {
-    const { input, response } = adapter.inviteSlackExpressAdapter(req, res);
+    const { input, response } = adapter.inviteSlackExpress(req, res);
     interactor.inviteSlackEmail(input, response);
   },
 );
