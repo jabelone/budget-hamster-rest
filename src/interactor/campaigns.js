@@ -1,4 +1,9 @@
+import moment from 'moment';
 import Campaign from '../models/campaign';
+
+function parseDate(date) {
+  return moment.utc(date).format().valueOf();
+}
 
 async function getAllCampaigns(
   input,
@@ -39,8 +44,8 @@ async function createOneCampaign(
 ) {
   try {
     const campaign = await new data.Campaign({
-      start: input.start,
-      end: input.end,
+      start: parseDate(input.start),
+      end: parseDate(input.end),
       goal: input.goal,
       title: input.title,
       body: input.body,
@@ -61,8 +66,8 @@ async function updateOneCampaign(
   try {
     const campaign = await new data.Campaign({
       id: input.id,
-      start: input.start,
-      end: input.end,
+      start: parseDate(input.start),
+      end: parseDate(input.end),
       goal: input.goal,
       title: input.title,
       body: input.body,

@@ -12,6 +12,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const app = express();
 const port = process.env.PORT || '3000';
 
+app.use(morgan('combined'));
+
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -26,8 +28,6 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('X-Method-Override'));
 
 app.use(router());
-
-app.use(morgan('combined'));
 
 function listen(expressApp = app, expressPort = port) {
   expressApp.listen(expressPort, () => {
