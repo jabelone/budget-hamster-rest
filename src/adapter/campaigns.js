@@ -15,7 +15,7 @@ function getAllCampaignsExpress(res) {
   };
 }
 
-function getOneCampaignExpress(req, res) {
+function readOneCampaignExpress(req, res) {
   return {
     input: {
       email: req.param.id,
@@ -101,7 +101,7 @@ function deleteOneCampaignExpress(req, res) {
 
 export default {
   getAllCampaignsExpress,
-  getOneCampaignExpress,
+  readOneCampaignExpress,
   createOneCampaignExpress,
   updateOneCampaignExpress,
   deleteOneCampaignExpress,
