@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import adapter from '../adapter/campaigns';
-import interactor from '../interactor/campaigns';
+import transactionRouter from './transactions';
+import adapter from '../../adapter/campaigns';
+import interactor from '../../interactor/campaigns';
 
 const router = new Router();
 
@@ -167,5 +168,7 @@ router.delete('/:id',
     interactor.deleteOneCampaign(input, response);
   },
 );
+
+router.use('/:id/transactions', transactionRouter);
 
 export default router;
