@@ -1,6 +1,6 @@
+import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import express from 'express';
 import methodOverride from 'method-override';
 import morgan from 'morgan';
 import dotenv from 'dotenv';

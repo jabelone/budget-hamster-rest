@@ -18,7 +18,7 @@ function getAllCampaignsExpress(res) {
 function readOneCampaignExpress(req, res) {
   return {
     input: {
-      email: req.param.id,
+      id: req.params.id,
     },
     response: {
       onSuccess: (campaign) => {
@@ -40,6 +40,8 @@ function createOneCampaignExpress(req, res) {
       start: req.body.start,
       end: req.body.end,
       goal: req.body.goal,
+      title: req.body.title,
+      body: req.body.body,
     },
     response: {
       onSuccess: (campaign) => {
@@ -58,10 +60,12 @@ function createOneCampaignExpress(req, res) {
 function updateOneCampaignExpress(req, res) {
   return {
     input: {
-      id: req.param.id,
+      id: req.params.id,
       start: req.body.start,
       end: req.body.end,
       goal: req.body.goal,
+      title: req.body.title,
+      body: req.body.body,
     },
     response: {
       onSuccess: (campaign) => {
@@ -80,14 +84,11 @@ function updateOneCampaignExpress(req, res) {
 function deleteOneCampaignExpress(req, res) {
   return {
     input: {
-      id: req.param.id,
-      start: req.body.start,
-      end: req.body.end,
-      goal: req.body.goal,
+      id: req.params.id
     },
     response: {
-      onSuccess: (campaign) => {
-        res.json(campaign);
+      onSuccess: () => {
+        res.json({ msg: 'Successfully Deleted Campaign' });
       },
       onFail: (status, { msg }) => {
         res.status(status).json({

@@ -9,6 +9,8 @@ exports.up = function(knex, Promise) {
       table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
       table.timestamp('start').notNullable();
       table.timestamp('end').notNullable();
+      table.string('title').notNullable();
+      table.string('body').notNullable();
       table.integer('goal');
     }),
   ]);

@@ -23,7 +23,7 @@ async function readOneCampaign(
   },
 ) {
   try {
-    const campaign = await data.Campaign.findWhere({ id: input.id });
+    const campaign = await data.Campaign.where({ id: input.id }).fetch();
     response.onSuccess(campaign);
   } catch (e) {
     response.onFail(500, { msg: e.message });
@@ -42,6 +42,8 @@ async function createOneCampaign(
       start: input.start,
       end: input.end,
       goal: input.goal,
+      title: input.title,
+      body: input.body,
     }).save(null, { method: 'insert' });
     response.onSuccess(campaign);
   } catch (e) {
@@ -62,6 +64,8 @@ async function updateOneCampaign(
       start: input.start,
       end: input.end,
       goal: input.goal,
+      title: input.title,
+      body: input.body,
     }).save(null, { method: 'update' });
     response.onSuccess(campaign);
   } catch (e) {
@@ -77,10 +81,10 @@ async function deleteOneCampaign(
   },
 ) {
   try {
-    const campaign = await new data.Campaign({
+    await new data.Campaign({
       id: input.id,
     }).destroy();
-    response.onSuccess(campaign);
+    response.onSuccess();
   } catch (e) {
     response.onFail(500, { msg: e.message });
   }
