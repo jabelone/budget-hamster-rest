@@ -24,11 +24,13 @@ const router = new Router({ mergeParams: true });
  * @apiParam (Parameters) {String} source Buyer's source token (Usually starts with tok_*).
  *
  * @apiSuccess {Integer} receiptId Receipt ID.
+ * @apiSuccess {String} email Email receipt will be sent to.
  *
  * @apiSuccessExample {json} Success-Response:
  *   HTTP/1.1 200 OK
  *   {
- *     "receiptId": "1234",
+ *     "receiptId": "123",
+ *     "email": "nelson.bighetti@hooli.xyz"
  *   }
  */
 router.post('/',
