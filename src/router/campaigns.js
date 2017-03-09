@@ -9,7 +9,7 @@ const router = new Router();
  * @apiName CampaignsGetAll
  * @apiGroup Campaigns
  *
- * @apiSuccess {Array} Array of Campaigns
+ * @apiSuccess {Array} campaigns Array of Campaigns
  *
  * @apiSuccessExample {json} Success-Response:
  *   HTTP/1.1 200 OK
