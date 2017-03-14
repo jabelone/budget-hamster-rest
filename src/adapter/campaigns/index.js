@@ -84,7 +84,7 @@ function updateOneCampaignExpress(req, res) {
 function deleteOneCampaignExpress(req, res) {
   return {
     input: {
-      id: req.params.id
+      id: req.params.id,
     },
     response: {
       onSuccess: () => {

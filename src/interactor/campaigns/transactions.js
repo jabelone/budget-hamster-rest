@@ -51,9 +51,9 @@ async function purchaseOneCampaign(
 
     await order.save({ approved: true }, { patch: true });
 
-    response.onSuccess(order.attributes.id, input.buyerEmail);
+    return response.onSuccess(order.attributes.id, input.buyerEmail);
   } catch (e) {
-    response.onFail(500, { msg: e.message });
+    return response.onFail(500, { msg: e.message });
   }
 }
 
