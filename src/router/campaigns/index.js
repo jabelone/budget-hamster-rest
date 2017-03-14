@@ -111,7 +111,7 @@ router.get('/:id',
 );
 
 /**
- * @api {post} /campaigns/:id Update a Campaign
+ * @api {put} /campaigns/:id Update a Campaign
  * @apiName CampaignUpdate
  * @apiGroup Campaigns
  *
@@ -148,11 +148,11 @@ router.put('/:id',
 );
 
 /**
- * @api {get} /campaigns/:id Read a campaign
- * @apiName CampaignRead
+ * @api {delete} /campaigns/:id Delete a campaign
+ * @apiName CampaignDelete
  * @apiGroup Campaigns
  *
- * @apiParam (Path Parameter) {Integer} id ID of the campaign to read.
+ * @apiParam (Path Parameter) {Integer} id ID of the campaign to delete.
  *
  * @apiSuccess {String} msg Friendly message from server on delete.
  *

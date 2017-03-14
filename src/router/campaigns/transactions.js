@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import adapter from '../../adapter/campaigns/transactions';
+import interactor from '../../interactor/campaigns/transactions';
 
 const router = new Router({ mergeParams: true });
 
@@ -35,7 +37,8 @@ const router = new Router({ mergeParams: true });
  */
 router.post('/',
   (req, res) => {
-    throw new Error('Not yet implemented');
+    const { input, response } = adapter.generateCampaignInvoice(req, res);
+    interactor.purchaseOneCampaign(input, response);
   },
 );
 

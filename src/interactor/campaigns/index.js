@@ -1,5 +1,5 @@
 import moment from 'moment';
-import Campaign from '../models/campaign';
+import Campaign from '../../models/campaign';
 
 function parseDate(date) {
   return moment.utc(date).format().valueOf();

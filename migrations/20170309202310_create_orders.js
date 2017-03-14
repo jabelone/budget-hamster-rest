@@ -11,6 +11,7 @@ exports.up = function(knex, Promise) {
       table.string('seller_identity').notNullable();
       table.string('buyer_email').notNullable();
       table.string('buyer_identity').notNullable();
+      table.boolean('approved').notNullable().defaultTo(true);
     }),
   ]);
 };
