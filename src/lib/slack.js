@@ -4,8 +4,16 @@ import translateError from './translate-error';
 
 dotenv.config();
 
-const SLACK_URL = process.env.SLACK_URL || '';
-const SLACK_TOKEN = process.env.SLACK_TOKEN || '';
+if (process.env.SLACK_URL == null) {
+  throw new Error('Missing SLACK_URL from .env !');
+}
+
+if (process.env.SLACK_TOKEN == null) {
+  throw new Error('Missing SLACK_TOKEN from .env !');
+}
+
+const SLACK_URL = process.env.SLACK_URL;
+const SLACK_TOKEN = process.env.SLACK_TOKEN;
 
 export async function inviteEmailToSlack(email) {
   const invitation = await superAgent
