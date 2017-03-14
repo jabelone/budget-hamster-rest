@@ -17,7 +17,5 @@ There are four main tools you will want to help life get easier to dive into dev
 ### Branching Strategy
 
 This project heavily relies upon vanilla Git Flow. [This](https://danielkummer.github.io/git-flow-cheatsheet/)
-cheat sheet may help you.
-
-Always send pull requests against the development branch and ensure that you have supplied sufficient
-tests.
+cheat sheet may help you. Always send pull requests against the development branch and ensure that you have 
+supplied sufficient tests.
