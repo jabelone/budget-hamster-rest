@@ -1,0 +1,6 @@
+/.git/
+/.idea/
+/apidoc/
+/node_modules/
+.env
+*.sqlite3
