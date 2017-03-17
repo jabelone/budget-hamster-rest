@@ -1,4 +1,9 @@
-# Budget Hamster (AKA Code Network API)
+# Byron should write his own documentation
+# Byron should write his own documentation
+# Byron should write his own documentation
+# Byron should write his own documentation
+
+# BudgetBudget Hamster (AKA Code Network API)
 ![Beast Status](https://img.shields.io/badge/Beast%20Mode-On-brightgreen.svg)
 
 
